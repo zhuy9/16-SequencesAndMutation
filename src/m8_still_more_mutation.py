@@ -142,16 +142,9 @@ def MUTATE_delete_negatives(numbers):
     #       then ask for help as needed.
     # HINT #2: Why might it be wise to start at the end and
     #       work backwards through the list to the beginning?
-    count = 0
-    for i in range(len(numbers)):
-        if numbers[i] >= 0:
-            count += 1
-    print (count)
-    for i in range(len(numbers)-1,-1,-1):
-        if numbers[i] >= 0:
-            for j in range(count-1,-1,-1):
-                numbers[j] = numbers[i]
-    numbers = numbers[0:count]
+    for i in range(len(numbers) - 1, -1, -1):
+        if numbers[i] < 0:
+            numbers.remove(numbers[i])
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
